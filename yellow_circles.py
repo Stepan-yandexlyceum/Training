@@ -4,12 +4,14 @@ import random
 import sys
 from PyQt5.QtGui import QPainter, QColor
 from PyQt5 import uic
-
+app = QApplication(sys.argv)
+main_class, base_class = loadUiType('UI.ui')
 
 class Example(QWidget):
-    def __init__(self):
+    def __init__(self,*args):
         super().__init__()
-        uic.loadUi('UI.ui', self)
+        super(MainWindow, self).__init__(*args)
+        self.setupUi(self)
         self.btn.clicked.connect(self.draw())
         self.qp = QPainter()
 
