@@ -22,7 +22,11 @@ class Example(QWidget):
         self.qp.end()
 
     def draw(self):
-        self.qp.setBrush(QColor(245, 237, 20))
+        randnum = random.randint(0, 255)
+        rnd1 = random.randint(0, 255)
+        rnd2 = random.randint(0, 255)
+        rnd3 = random.randint(0, 255)
+        self.qp.setBrush(QColor(rnd1, rnd2, rnd3))
         randnum = random.randint(0, 100)
         self.qp.drawEllipse(self.coords[0] - randnum, self.coords[1] - randnum, self.coords[0] + randnum,
                             self.coords[1] + randnum)
